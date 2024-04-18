@@ -1,14 +1,18 @@
 public class Carta {
-    protected String naipes;
-    protected String value;
+    private String[] naipes = { "Ouros", "Espadas", "Copas", "Paus" };
+    private String[] valorCartas = { "4", "5", "6", "7", "Dama", "Valete", "Rei", "Ás", "2", "3" };
 
-    public Carta(String naipes, String value) {
-        this.naipes = naipes;
-        this.value = value;
+    public String[] getNaipes() {
+        return naipes;
     }
+
+    public String[] getValorCartas() {
+        return valorCartas;
+    }
+
+    @Override
+    public String toString() {
+        return valorCartas + " de " + naipes;
+    }
+
 }
-
-// numero de cartas A 2 3 4 5 6 7 J Q K A
-// nipes ouro espadas copas e paus
-
-// collections.shuffle
