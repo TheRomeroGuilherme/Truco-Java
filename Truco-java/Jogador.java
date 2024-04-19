@@ -1,13 +1,15 @@
+
+//---------------------------------------------Arquivo Jogador.java
 import java.util.ArrayList;
 import java.util.List;
 
 public class Jogador {
-    private String nome;
-    private List<Carta> mao;
-    private int pontuacao;
+    protected String nome;
+    protected List<Carta> mao;
+    protected int pontuacao;
 
-    public Jogador(String NOME) {
-        this.nome = NOME;
+    public Jogador(String nome) {
+        this.nome = nome;
         this.mao = new ArrayList<>();
         this.pontuacao = 0;
     }
@@ -48,5 +50,4 @@ public class Jogador {
     public String toString() {
         return nome + ": " + mao + " (Pontuação: " + pontuacao + ")";
     }
-
 }

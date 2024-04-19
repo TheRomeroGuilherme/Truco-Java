@@ -1,18 +1,22 @@
 public class Carta {
-    private String[] naipes = { "Ouros", "Espadas", "Copas", "Paus" };
-    private String[] valorCartas = { "4", "5", "6", "7", "Dama", "Valete", "Rei", "Ás", "2", "3" };
+    private String valor;
+    private String naipe;
 
-    public String[] getNaipes() {
-        return naipes;
+    public Carta(String valor, String naipe) {
+        this.valor = valor;
+        this.naipe = naipe;
     }
 
-    public String[] getValorCartas() {
-        return valorCartas;
+    public String getValor() {
+        return valor;
+    }
+
+    public String getNaipe() {
+        return naipe;
     }
 
     @Override
     public String toString() {
-        return valorCartas + " de " + naipes;
+        return valor + " de " + naipe;
     }
-
 }

@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Baralho {
-    private ArrayList<Carta> cartas;
+    private List<Carta> cartas;
 
     public Baralho() {
         this.cartas = new ArrayList<>();
@@ -10,26 +11,31 @@ public class Baralho {
     }
 
     private void criarBaralho() {
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 4; j++) {
-                Carta carta = new Carta();
-                cartas.add(carta);
-                // para ver as cartas em ordem
-                // System.out.println(
-                // "Carta #" + (cartas.size() - 0) +
-                // " Naipe: [" + carta.getNaipes()[j] + "]" +
-                // " Valor: [" + carta.getValorCartas()[i] + "]");
-            }
+        String[] naipes = { "Ouros", "Espadas", "Copas", "Paus" };
+        String[] valores = { "4", "5", "6", "7", "Dama", "Valete", "Rei", "Ás", "2", "3" };
 
+        for (String naipe : naipes) {
+            for (String valor : valores) {
+                Carta carta = new Carta(valor, naipe);
+                cartas.add(carta);
+            }
         }
     }
 
-    public String[] getNaipesDeUmaCarta(Carta carta) {
-        return carta.getNaipes();
+    public Carta darCarta() {
+        if (!cartas.isEmpty()) {
+            return cartas.remove(0);
+        } else {
+            return null; // Retorna null se o baralho estiver vazio
+        }
     }
 
-    public String[] getValorCartasDeUmaCarta(Carta carta) {
-        return carta.getValorCartas();
+    public Carta getCartaVira() {
+        if (!cartas.isEmpty()) {
+            return cartas.get(cartas.size() - 1); // Retorna a última carta do baralho como a carta vira
+        } else {
+            return null; // Retorna null se o baralho estiver vazio
+        }
     }
 
     public void embaralhar() {
