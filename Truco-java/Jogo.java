@@ -1,3 +1,6 @@
+//GitHub TheRomeroGuilherme/Truco-Java
+//--Arquivo Jogo.java
+
 import java.util.Scanner;
 
 public class Jogo {
@@ -11,9 +14,12 @@ public class Jogo {
             System.out.println("|\tOpções para jogar\t\t\t\t\t|");
             System.out.println("|\t\t\t\t\t\t\t\t|");
             System.out.println("|\t1 = 1 Player vs 1 Player\t\t\t\t|");
+            System.out.println("|\t2 = 2 Players vs 2s Player\t\t\t\t|");
+
             System.out.println("|\t0 = Sair do Jogo\t\t\t\t\t|");
             System.out.println("+---------------------------------------------------------------+");
             int opc = sc.nextInt();
+            sc.nextLine(); // Consumir a quebra de linha pendente
 
             switch (opc) {
                 case 0:
@@ -34,10 +40,10 @@ public class Jogo {
                         return;
                     }
                 case 1:
-                    iniciarJogo();
+                    Mesa1.iniciarJogo1();
                     break;
                 case 2:
-                    System.out.println("Opção desejada está em construção");
+                    Mesa2.iniciarJogo2();
                     break;
                 default:
                     System.out.println("+---------------------------------------------------------------+");
@@ -47,24 +53,6 @@ public class Jogo {
             }
         }
     }
-
-    public static void iniciarJogo() {
-        // Criar instâncias de Jogador e Maquina
-        Jogador jogador1 = new Jogador("Player1");
-        Jogador jogador2 = new Jogador("Player2");
-
-        // Criar um baralho e embaralhá-lo
-        Baralho baralho = new Baralho();
-        baralho.embaralhar();
-
-        // Distribuir cartas para os jogadores
-        for (int i = 0; i < 3; i++) {
-            jogador1.receberCarta(baralho.darCarta());
-            jogador2.receberCarta(baralho.darCarta());
-        }
-
-        // Exibir as mãos do jogador e da máquina
-        System.out.println("Mão do Jogador1: " + jogador1.getMao());
-        System.out.println("Mão do Jogador2: " + jogador2.getMao());
-    }
 }
+
+// --Final arquivo Jogo.java1

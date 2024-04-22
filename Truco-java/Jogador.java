@@ -1,5 +1,6 @@
 
-//---------------------------------------------Arquivo Jogador.java
+//GitHub TheRomeroGuilherme/Truco-Java
+//--Arquivo Jogador.java
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,13 @@ public class Jogador {
             mao.add(carta);
         } else {
             System.out.println("Erro: Mão do jogador está cheia!");
+        }
+    }
+
+    public static void exibirCartas(Jogador jogador) {
+        System.out.println("Cartas de " + jogador.getNome() + ":");
+        for (int i = 0; i < jogador.getMao().size(); i++) {
+            System.out.println(i + ": " + jogador.getMao().get(i));
         }
     }
 
@@ -50,4 +58,10 @@ public class Jogador {
     public String toString() {
         return nome + ": " + mao + " (Pontuação: " + pontuacao + ")";
     }
+
+    public void limparMao() {
+        mao.clear();
+    }
 }
+
+// --Final arquivo Jogador.java
