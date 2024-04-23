@@ -79,6 +79,13 @@ public class Baralho {
         return naipes[proximoIndex];
     }
 
+    public static int compararCartas(Carta carta1, Carta carta2) {
+        String[] valores = { "4", "5", "6", "7", "Q", "J", "K", "A", "2", "3" };
+        int indiceCarta1 = java.util.Arrays.asList(valores).indexOf(carta1.getValor());
+        int indiceCarta2 = java.util.Arrays.asList(valores).indexOf(carta2.getValor());
+        return Integer.compare(indiceCarta1, indiceCarta2);
+    }
+
     public void adicionarCarta(Carta carta) {
         cartas.add(carta); // Adiciona a carta de volta ao baralho
     }

@@ -30,11 +30,12 @@ public class Jogador {
         }
     }
 
-    public void jogarCarta(Carta carta) {
-        if (mao.contains(carta)) {
-            mao.remove(carta);
+    public Carta jogarCarta(int indice) {
+        if (indice >= 0 && indice < mao.size()) {
+            return mao.remove(indice);
         } else {
-            System.out.println("Erro: Carta não está na mão do jogador!");
+            System.out.println("Erro: Índice inválido!");
+            return null;
         }
     }
 
