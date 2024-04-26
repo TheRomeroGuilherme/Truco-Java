@@ -40,7 +40,7 @@ public class Jogo {
                         return;
                     }
                 case 1:
-                    Mesa1.iniciarJogo1();
+                    Mesa1.iniciarJogo1(sc);
                     break;
                 case 2:
                     Mesa2.iniciarJogo2();
@@ -55,6 +55,7 @@ public class Jogo {
                     break;
             }
         }
+
     }
 }
 

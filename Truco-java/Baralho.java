@@ -63,6 +63,13 @@ public class Baralho {
         }
     }
 
+    public void exibirCartas(Jogador jogador) {
+        System.out.println("Cartas de " + jogador.getNome() + ":");
+        for (int i = 0; i < jogador.getMao().size(); i++) {
+            System.out.println(i + ": " + jogador.getMao().get(i).toString());
+        }
+    }
+
     // Função para obter o próximo valor na sequência
     public static String proximoValor(String valor) {
         String[] valores = { "4", "5", "6", "7", "Dama", "Valete", "Rei", "Ás", "2", "3" };
